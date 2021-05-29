@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <script
+      src="https://kit.fontawesome.com/555976c2d1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato&family=Martel:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+ 
+  </head>
+  <body>
+    <div class="container">
+      <div class="row full-app">
+        <div class="col-6 left-panel">
+          <div class="row">
+            <h1>Brussels</h1>
+          </div>
+
+          <div class="row current-date">
+            <div class="col">
+              <h3 id="date">Sunday 25 April 2021</h3>
+            </div>
+          </div>
+          <div class="row search-bar">
+            <div class="col">
+              <form id="city-form">
+                <input
+                  type="text"
+                  placeholder="Enter city"
+                  class="enter-city"
+                  id="city-input"
+                  autocapitalize="sentences"
+                />
+                <input type="submit" value="Search" class="search"/>
+              </form>
+            </div>
+          </div>
+          <div class="row predefined-cities">
+            <ul>
+              <li><a href="#" id="current-location">Current location</a></li>
+              <li><a href="#" id="berlin">Berlin</a></li>
+              <li><a href="#" id="brussels">Brussels</a></li>
+              <li><a href="#" id="luxemburg">Luxemburg</a></li>
+              <li><a href="#" id="paris">Paris</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-6 right-panel">
+          <div class="row current-city-info">
+            <div class="col-5 current-city-info">
+              <p>
+                <span id="wind">Wind: 19 km/h</span> <br />
+                <span id="humidity">Humidity: 42%</span>
+              </p>
+            </div>
+            <div class="col-2">
+              <img
+                src="images/cloudy.png"
+                alt="cloudy"
+                class="current-weather-icon"
+              />
+            </div>
+            <div class="col-4 degrees">
+              <h2 id="current-temperature">13˚C
+            </h2>
+               <a href="#" id="celcius-link">˚C</a> |
+              <a href="#" id="fahrenheit-link">˚F</a>
+            </div>
+          </div>
+          <hr />
+          <div class="row forecast-first">
+            <div class="col-3">
+              <p>Tomorrow</p>
+            </div>
+            <div class="col-3">
+              <p class="temperature">15˚C</p>
+            </div>
+            <div class="col-6">
+              <img src="images/sun.png" alt="sunny" class="forcast-image" />
+            </div>
+          </div>
+          <div class="row forecast">
+            <div class="col-3">
+              <p>Tuesday</p>
+            </div>
+            <div class="col-3">
+              <p class="temperature">17˚C</p>
+            </div>
+            <div class="col-6">
+              <img src="images/sun.png" alt="sunny" class="forcast-image" />
+            </div>
+          </div>
+          <div class="row forecast">
+            <div class="col-3">
+              <p>Wednesday</p>
+            </div>
+            <div class="col-3">
+              <p class="temperature">17˚C</p>
+            </div>
+            <div class="col-6">
+              <img src="images/cloudy.png" alt="cloudy" class="forcast-image" />
+            </div>
+          </div>
+          <div class="row forecast">
+            <div class="col-3">
+              <p>Thursday</p>
+            </div>
+            <div class="col-3">
+              <p class="temperature">14˚C</p>
+            </div>
+            <div class="col-6">
+              <img src="images/rain.png" alt="rain" class="forcast-image" />
+            </div>
+          </div>
+          <div class="row forecast">
+            <div class="col-3">
+              <p>Friday</p>
+            </div>
+            <div class="col-3 temperature">
+              <p class="temperature">12˚C</p>
+            </div>
+            <div class="col-6">
+              <img src="images/rain.png" alt="rain" class="forcast-image" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+     <script
+      src = "src/script.js";></script>
+    </script>
+</html>

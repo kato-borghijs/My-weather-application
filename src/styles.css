@@ -1,0 +1,149 @@
+h1,
+h3,
+li {
+  color: white;
+  font-family: "Martel", serif;
+  text-align: left;
+}
+
+h2,
+p,
+form {
+  font-family: "Lato", sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  margin-bottom: 0px;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+h2 {
+  margin-bottom: 0px;
+  margin-top: 22px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  text-align: left;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #9896f1;
+}
+
+ul {
+  margin-top: 20px;
+  padding-left: 15px;
+}
+
+li {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 40px;
+  list-style: none;
+}
+
+img {
+  display: block;
+  margin-left: 0 auto;
+  width: 30px;
+}
+
+form {
+  text-align: left;
+}
+
+input,
+button {
+  border: none;
+  border-radius: 5px;
+  color: #9896f1;
+}
+
+div.current-city-info {
+  padding-left: 65px;
+}
+
+div.col-4.degrees {
+  padding-right: 5px;
+}
+
+img.forcast-image {
+  display: block;
+  margin: 0 40px;
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.col-5.current-city-info {
+  padding-left: 0;
+}
+
+.current-city-info {
+  margin-top: 25px;
+}
+
+.current-weather-icon {
+  width: 70px;
+  margin-block-start: 16px;
+}
+
+.enter-city {
+  margin-top: 20px;
+}
+
+.left-panel {
+  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  border-radius: 15px 0 0 15px;
+}
+
+.forecast {
+  padding-left: 50px;
+}
+
+.forecast-first {
+  margin-top: 35px;
+  padding-left: 50px;
+}
+
+.row.full-app {
+  margin: 0 auto;
+  max-width: 900px;
+  border-radius: 15px;
+  background-color: #fffdfb;
+  box-shadow: 10px 10px 19px 8px rgba(0, 0, 0, 0.1);
+}
+.temperature {
+  text-align: center;
+}
+#celcius-link {
+  font-size: 18px;
+  color: #9896f1;
+}
+#celcius-link:hover {
+  font-size: 18px;
+  color: #535283;
+}
+#fahrenheit-link {
+  font-size: 18px;
+  color: #9896f1;
+}
+#fahrenheit-link:hover {
+  font-size: 18px;
+  color: #535283;
+}
