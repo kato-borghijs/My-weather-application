@@ -128,6 +128,9 @@ img.forcast-image {
   background-color: #fffdfb;
   box-shadow: 10px 10px 19px 8px rgba(0, 0, 0, 0.1);
 }
+.source-code {
+  color: #9896f1;
+}
 .temperature {
   text-align: center;
 }
