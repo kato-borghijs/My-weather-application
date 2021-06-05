@@ -31,6 +31,8 @@ function showCurrentWeather(response) {
   let temperature = Math.round(celciusTemperature);
   let wind = response.data.wind.speed;
   let humidity = response.data.main.humidity;
+  let icon = response.data.weather[0].icon;
+  console.log(icon);
 
   let displayTemp = document.querySelector("#current-temperature");
   displayTemp.innerHTML = `${temperature}˚C`;
@@ -40,6 +42,9 @@ function showCurrentWeather(response) {
 
   let displayHumidity = document.querySelector("#humidity");
   displayHumidity.innerHTML = `Humidity: ${humidity}%`;
+
+  let displayIcon = document.querySelector("#icon");
+  displayIcon.setAttribute("src", `images/${icon}.png`);
 }
 
 // current temperature function current location
