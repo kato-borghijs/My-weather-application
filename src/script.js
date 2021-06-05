@@ -26,7 +26,9 @@ function formatDate(date) {
 
 // current temperature function
 function showCurrentWeather(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celciusTemperature = response.data.main.temp;
+
+  let temperature = Math.round(celciusTemperature);
   let wind = response.data.wind.speed;
   let humidity = response.data.main.humidity;
 
@@ -42,7 +44,9 @@ function showCurrentWeather(response) {
 
 // current temperature function current location
 function showCurrentWeatherCurrentLocation(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celciusTemperature = response.data.main.temp;
+
+  let temperature = Math.round(celciusTemperature);
   let wind = response.data.wind.speed;
   let humidity = response.data.main.humidity;
   let location = response.data.name;
@@ -62,7 +66,9 @@ function showCurrentWeatherCurrentLocation(response) {
 
 // current temperature function Berlin
 function showCurrentWeatherBerlin(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celciusTemperature = response.data.main.temp;
+
+  let temperature = Math.round(celciusTemperature);
   let wind = response.data.wind.speed;
   let humidity = response.data.main.humidity;
 
@@ -81,7 +87,9 @@ function showCurrentWeatherBerlin(response) {
 
 // current temperature function Brussels
 function showCurrentWeatherBrussels(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celciusTemperature = response.data.main.temp;
+
+  let temperature = Math.round(celciusTemperature);
   let wind = response.data.wind.speed;
   let humidity = response.data.main.humidity;
 
@@ -100,7 +108,9 @@ function showCurrentWeatherBrussels(response) {
 
 // current temperature function Luxemburg
 function showCurrentWeatherLuxemburg(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celciusTemperature = response.data.main.temp;
+
+  let temperature = Math.round(celciusTemperature);
   let wind = response.data.wind.speed;
   let humidity = response.data.main.humidity;
 
@@ -119,7 +129,9 @@ function showCurrentWeatherLuxemburg(response) {
 
 // current temperature function Paris
 function showCurrentWeatherParis(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celciusTemperature = response.data.main.temp;
+
+  let temperature = Math.round(celciusTemperature);
   let wind = response.data.wind.speed;
   let humidity = response.data.main.humidity;
 
@@ -201,17 +213,22 @@ let parisLink = document.querySelector("#paris");
 parisLink.addEventListener("click", clickParis);
 
 // change to celcius function
-function clickCelcius(event) {
+function showCelcius(event) {
   event.preventDefault();
-  let currentCelcius = document.querySelector("h2");
-  currentCelcius.innerHTML = "13˚C";
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
 }
 
 // change to fahrenheit function
-function clickFahrenheit(event) {
+function showFahrenheit(event) {
   event.preventDefault();
-  let currentFahrenheit = document.querySelector("h2");
-  currentFahrenheit.innerHTML = "66˚F";
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 //date variables
@@ -225,11 +242,11 @@ cityInput.addEventListener("submit", enterCity);
 
 // celsius variables
 let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", clickCelcius);
+celciusLink.addEventListener("click", showCelcius);
 
 // fahrenheit variables
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", clickFahrenheit);
+fahrenheitLink.addEventListener("click", showFahrenheit);
 
 // current location display function
 function showPosition(location) {
@@ -249,3 +266,5 @@ function showCurrentPosition() {
 // click current location link
 let currentLocationLink = document.querySelector("#current-location");
 currentLocationLink.addEventListener("click", showCurrentPosition);
+
+let celciusTemperature = null;

@@ -34,11 +34,12 @@ p {
 }
 
 a {
-  color: white;
+  color: #9896f1;
+  font-size: 18px;
 }
 
 a:hover {
-  color: #9896f1;
+  color: #535283;
 }
 
 ul {
@@ -68,6 +69,10 @@ button {
   border: none;
   border-radius: 5px;
   color: #9896f1;
+}
+
+a.quick-link {
+  color: white;
 }
 
 div.current-city-info {
@@ -134,19 +139,14 @@ img.forcast-image {
 .temperature {
   text-align: center;
 }
-#celcius-link {
+
+a.active {
   font-size: 18px;
-  color: #9896f1;
+  color: black;
+  cursor: default;
 }
-#celcius-link:hover {
+a.active:hover {
   font-size: 18px;
-  color: #535283;
-}
-#fahrenheit-link {
-  font-size: 18px;
-  color: #9896f1;
-}
-#fahrenheit-link:hover {
-  font-size: 18px;
-  color: #535283;
+  color: black;
+  text-decoration: none;
 }
