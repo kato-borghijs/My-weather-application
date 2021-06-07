@@ -32,7 +32,6 @@ function showCurrentWeather(response) {
   let wind = response.data.wind.speed;
   let humidity = response.data.main.humidity;
   let icon = response.data.weather[0].icon;
-  console.log(icon);
 
   let displayTemp = document.querySelector("#current-temperature");
   displayTemp.innerHTML = `${temperature}˚C`;
