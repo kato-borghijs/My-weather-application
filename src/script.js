@@ -24,6 +24,218 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
+// date display function forecast
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
+}
+
+// forecast function
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="row forecast">
+        <div class="col-3">
+          <p>${formatDay(forecastDay.dt)}</p>
+        </div>
+        <div class="col-3">
+          <p class="temperature">${Math.round(forecastDay.temp.day)}˚C</p>
+        </div>
+        <div class="col-6">
+          <img src="images/${
+            forecastDay.weather[0].icon
+          }.png" alt="sunny" class="forcast-image" />
+        </div>
+      </div>`;
+    }
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
+// forecast function current location
+function displayForecastCurrentLocation(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="row forecast">
+        <div class="col-3">
+          <p>${formatDay(forecastDay.dt)}</p>
+        </div>
+        <div class="col-3">
+          <p class="temperature">${Math.round(forecastDay.temp.day)}˚C</p>
+        </div>
+        <div class="col-6">
+          <img src="images/${
+            forecastDay.weather[0].icon
+          }.png" alt="sunny" class="forcast-image" />
+        </div>
+      </div>`;
+    }
+  });
+  forecastElement.innerHTML = forecastHTML;
+}
+
+// forecast function Berlin
+function displayForecastBerlin(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="row forecast">
+        <div class="col-3">
+          <p>${formatDay(forecastDay.dt)}</p>
+        </div>
+        <div class="col-3">
+          <p class="temperature">${Math.round(forecastDay.temp.day)}˚C</p>
+        </div>
+        <div class="col-6">
+          <img src="images/${
+            forecastDay.weather[0].icon
+          }.png" alt="sunny" class="forcast-image" />
+        </div>
+      </div>`;
+    }
+  });
+  forecastElement.innerHTML = forecastHTML;
+}
+
+// forecast function Luxemburg
+function displayForecastLuxemburg(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="row forecast">
+        <div class="col-3">
+          <p>${formatDay(forecastDay.dt)}</p>
+        </div>
+        <div class="col-3">
+          <p class="temperature">${Math.round(forecastDay.temp.day)}˚C</p>
+        </div>
+        <div class="col-6">
+          <img src="images/${
+            forecastDay.weather[0].icon
+          }.png" alt="sunny" class="forcast-image" />
+        </div>
+      </div>`;
+    }
+  });
+  forecastElement.innerHTML = forecastHTML;
+}
+
+// forecast function Paris
+function displayForecastParis(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <div class="row forecast">
+        <div class="col-3">
+          <p>${formatDay(forecastDay.dt)}</p>
+        </div>
+        <div class="col-3">
+          <p class="temperature">${Math.round(forecastDay.temp.day)}˚C</p>
+        </div>
+        <div class="col-6">
+          <img src="images/${
+            forecastDay.weather[0].icon
+          }.png" alt="sunny" class="forcast-image" />
+        </div>
+      </div>`;
+    }
+  });
+  forecastElement.innerHTML = forecastHTML;
+}
+
+// get coordinates for forecast function
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "39c5b362f47e0665da2f1eefc0c7ab6b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
+// get coordinates for forecast function current location
+function getForecastCurrentLocation(coordinates) {
+  console.log(coordinates);
+  let apiKey = "39c5b362f47e0665da2f1eefc0c7ab6b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecastCurrentLocation);
+}
+
+// get coordinates for forecast function Berlin
+function getForecastBerlin(coordinates) {
+  console.log(coordinates);
+  let apiKey = "39c5b362f47e0665da2f1eefc0c7ab6b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecastBerlin);
+}
+
+// get coordinates for forecast function Brussels
+function getForecastBrussels(coordinates) {
+  console.log(coordinates);
+  let apiKey = "39c5b362f47e0665da2f1eefc0c7ab6b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecastBrussels);
+}
+
+// get coordinates for forecast function Luxemburg
+function getForecastLuxemburg(coordinates) {
+  console.log(coordinates);
+  let apiKey = "39c5b362f47e0665da2f1eefc0c7ab6b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecastLuxemburg);
+}
+
+// get coordinates for forecast function Paris
+function getForecastParis(coordinates) {
+  console.log(coordinates);
+  let apiKey = "39c5b362f47e0665da2f1eefc0c7ab6b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecastParis);
+}
+
 // current temperature function
 function showCurrentWeather(response) {
   celciusTemperature = response.data.main.temp;
@@ -44,6 +256,8 @@ function showCurrentWeather(response) {
 
   let displayIcon = document.querySelector("#icon");
   displayIcon.setAttribute("src", `images/${icon}.png`);
+
+  getForecast(response.data.coord);
 }
 
 // current temperature function current location
@@ -66,6 +280,8 @@ function showCurrentWeatherCurrentLocation(response) {
 
   let displayCity = document.querySelector("h1");
   displayCity.innerHTML = `${location}`;
+
+  getForecastCurrentLocation(response.data.coord);
 }
 
 // current temperature function Berlin
@@ -87,6 +303,8 @@ function showCurrentWeatherBerlin(response) {
 
   let displayCity = document.querySelector("h1");
   displayCity.innerHTML = "Berlin";
+
+  getForecastBerlin(response.data.coord);
 }
 
 // current temperature function Brussels
@@ -108,6 +326,8 @@ function showCurrentWeatherBrussels(response) {
 
   let displayCity = document.querySelector("h1");
   displayCity.innerHTML = "Brussels";
+
+  getForecastBrussels(response.data.coord);
 }
 
 // current temperature function Luxemburg
@@ -129,6 +349,8 @@ function showCurrentWeatherLuxemburg(response) {
 
   let displayCity = document.querySelector("h1");
   displayCity.innerHTML = "Luxemburg";
+
+  getForecastLuxemburg(response.data.coord);
 }
 
 // current temperature function Paris
@@ -150,6 +372,8 @@ function showCurrentWeatherParis(response) {
 
   let displayCity = document.querySelector("h1");
   displayCity.innerHTML = "Paris";
+
+  getForecastParis(response.data.coord);
 }
 
 // city display function
