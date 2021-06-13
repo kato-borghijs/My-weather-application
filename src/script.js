@@ -440,25 +440,6 @@ luxemburgLink.addEventListener("click", clickLuxemburg);
 let parisLink = document.querySelector("#paris");
 parisLink.addEventListener("click", clickParis);
 
-// change to celcius function
-function showCelcius(event) {
-  event.preventDefault();
-  celciusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = Math.round(celciusTemperature);
-}
-
-// change to fahrenheit function
-function showFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
-  celciusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-
 //date variables
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
@@ -467,14 +448,6 @@ dateElement.innerHTML = formatDate(currentTime);
 //city variables
 let cityInput = document.querySelector("#city-form");
 cityInput.addEventListener("submit", enterCity);
-
-// celsius variables
-let celciusLink = document.querySelector("#celcius-link");
-celciusLink.addEventListener("click", showCelcius);
-
-// fahrenheit variables
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheit);
 
 // current location display function
 function showPosition(location) {
