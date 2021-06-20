@@ -151,3 +151,7 @@ a.active:hover {
   color: black;
   text-decoration: none;
 }
+
+#city {
+  text-transform: uppercase;
+}
