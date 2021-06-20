@@ -153,5 +153,5 @@ a.active:hover {
 }
 
 #city {
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
